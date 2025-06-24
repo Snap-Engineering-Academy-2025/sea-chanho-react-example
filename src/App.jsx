@@ -24,7 +24,7 @@ function App() {
           color="text.primary"
           sx={{ py: 2 }}
         >
-          CSS Mystery
+          Three Neat Exercises
         </Typography>
         <Typography
           variant="h5"
@@ -32,37 +32,26 @@ function App() {
           color="text.secondary"
           sx={{ mx: 10 }}
         >
-          Why isn't the CSS working?
+          Try adding these to your routine
         </Typography>
       </Container>
 
       <Container maxWidth="lg">
-        <Button
-          variant="contained"
-          // I'm trying to use custom CSS defined in the file App.css,
-          // but it isn't working. Why, and how can I fix it?
-          className="characterButton"
-        >
-          Red Button?
-        </Button>
-
-
-        <Grid container spacing={2}>
-          <Grid>
+        <Grid container spacing={0} >
+          <Grid display="flex" justifyContent="center" alignItems="center" size={4}> 
             <Card sx={{ maxWidth: 345 }}>
               <CardMedia
                 component="img"
-                alt="green iguana"
+                alt="Incline Dumbell Press"
                 height="140"
-                image="/static/images/cards/contemplative-reptile.jpg"
+                image="https://cdn.jefit.com/assets/img/exercises/gifs/31.gif"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  Lizard
+                  Incline Dumbell Press
                 </Typography>
                 <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                  Lizards are a widespread group of squamate reptiles, with over 6,000
-                  species, ranging across all continents except Antarctica
+                  Works shoulders, chest, and triceps.
                 </Typography>
               </CardContent>
               <CardActions>
@@ -72,21 +61,43 @@ function App() {
             </Card>
           </Grid>
 
-          <Grid>
+          <Grid display="flex" justifyContent="center" alignItems="center" size={4}>
             <Card sx={{ maxWidth: 345 }}>
               <CardMedia
                 component="img"
-                alt="green iguana"
+                alt="Lateral Dumbell Raise"
                 height="140"
-                image="/static/images/cards/contemplative-reptile.jpg"
+                image="https://cdn.jefit.com/assets/img/exercises/gifs/32.gif"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  Lizard
+                  Lateral Dumbell Raise
                 </Typography>
                 <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                  Lizards are a widespread group of squamate reptiles, with over 6,000
-                  species, ranging across all continents except Antarctica
+                  Works your shoulders
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="small">Share</Button>
+                <Button size="small">Learn More</Button>
+              </CardActions>
+            </Card>
+          </Grid>
+
+           <Grid display="flex" justifyContent="center" alignItems="center" size={4}>
+            <Card sx={{ maxWidth: 345 }}>
+              <CardMedia
+                component="img"
+                alt="Pull up"
+                height="140"
+                image="https://cdn.jefit.com/assets/img/exercises/gifs/83.gif"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                Pull up
+                </Typography>
+                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                  Works lets, shoulders, and biceps
                 </Typography>
               </CardContent>
               <CardActions>
