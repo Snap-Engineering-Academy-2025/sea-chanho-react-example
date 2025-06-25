@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
+
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import './App.css';
@@ -13,31 +13,42 @@ import exercises from "./exercises.json"
 import { useState } from 'react';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
+import Popover from '@mui/material/Popover';
+import Button from './Button';
 
 // import characters from './protagonists.json'
 
 function App() {
-  let [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(0);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  // const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
 
-  const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-  };
+  // const style = {
+  //   position: 'absolute',
+  //   top: '50%',
+  //   left: '50%',
+  //   transform: 'translate(-50%, -50%)',
+  //   width: 400,
+  //   bgcolor: 'background.paper',
+  //   border: '2px solid #000',
+  //   boxShadow: 24,
+  //   p: 4,
+  // };
 
-  function handleClick() {
-    setCounter(counter += 1)
-    console.log(counter);
-  }
+  
+
+  // const handleClickPop = (event: React.MouseEvent<HTMLButtonElement>) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
+
+  // const openPop = Boolean(anchorEl);
+  // const id = openPop ? 'simple-popover' : undefined;
+
+  // const handleClosePop = () => {
+  //   setAnchorEl(null);
+  // };
   
   return (
     
@@ -85,11 +96,11 @@ function App() {
       Click Me
     </Button> */}
 
-    <button onClick={handleClick}>
-      Clicks - {counter}
-    </button>
-
-    <div>
+    <Button />
+     
+  
+        {/*Modal*/}
+    {/* <div>
       <Button onClick={handleOpen}>Open modal</Button>
       <Modal
         open={open}
@@ -106,7 +117,25 @@ function App() {
           </Typography>
         </Box>
       </Modal>
-    </div>
+    </div> */}
+        {/*Popover*/}
+    {/* <div>
+      <Button aria-describedby={id} variant="contained" onClick={handleClickPop}>
+        Open Popover
+      </Button>
+      <Popover
+        id={id}
+        open={openPop}
+        anchorEl={anchorEl}
+        onClose={handleClosePop}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+      >
+        <Typography sx={{ p: 2 }}>The content of the Popover.</Typography>
+      </Popover>
+    </div> */}
     </>
   )
 }
