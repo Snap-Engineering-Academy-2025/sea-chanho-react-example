@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Button() {
+export default function ClickButton() {
   const [counter, setCounter] = useState(0);
 
   function handleClick() {
