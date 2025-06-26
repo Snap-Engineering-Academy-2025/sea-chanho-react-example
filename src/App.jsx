@@ -22,18 +22,23 @@ import StateTextFields from './StateTextFields';
 
 function App() {
   const [counter, setCounter] = useState(0);
-  const [name, setName] = React.useState('Cat in the Hat');
+  const [search, setSearch] = useState('');
+  const [result, setResult] = useState(exercises);
 
   function handleChange(e) {
-    setName(e.target.value);
-    console.log(name);
+    let newSearch = e.target.value;
+    let temp = result
+    temp = exercises.filter((exercise) => exercise.title.includes(newSearch) || exercise.description.includes(newSearch))
+    console.log(temp);
+    setSearch(newSearch);
+    setResult(temp);
   }
 
   return (
 
     <>
 
-      <Container maxWidth="md" sx={{ mb: 4 }}>
+      <Container maxWidth="md" sx={{ mb: 4}}>
         <Typography
           variant="h2"
           align="center"
@@ -50,20 +55,23 @@ function App() {
         >
           Try adding these to your routine
         </Typography>
+
+        <StateTextFields
+          onChange={handleChange}
+          search={search} 
+        />
       </Container>
 
-      <StateTextFields
-      onChange = {handleChange} 
-      name = {name}/>
+
 
       <Container maxWidth="lg">
         <Grid container spacing={0} >
-          {exercises.map(exercise => (
+          {result.map(exercise => (
             <Grid display="flex" justifyContent="center" alignItems="center" size={4}>
               <DataCard
                 title={exercise.title}
                 imgURL={exercise.imgURL}
-                description={exercises.description}
+                description={exercise.description}
 
               />
             </Grid>
@@ -78,12 +86,13 @@ function App() {
     >
       Click Me
     </Button> */}
-
+      <Container maxWidth="lg" sx={{display: "flex", alignContent: "center", justifyContent: "center", mt: "10%", pr: "lg"}}>
       <BasicModal />
 
       <ClickButton />
 
       <BasicPopover />
+      </Container>
     </>
   )
 }

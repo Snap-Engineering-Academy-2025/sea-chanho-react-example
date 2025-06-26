@@ -9,8 +9,9 @@ export default function StateTextFields(props) {
         <TextField
             id="outlined-controlled"
             label="Controlled"
-            value={props.name}
+            value={props.search}
             onChange={props.onChange}
+            sx ={{minWidth: '100%'}}
         />
     )
 }
