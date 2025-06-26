@@ -22,11 +22,17 @@ import StateTextFields from './StateTextFields';
 
 function App() {
   const [counter, setCounter] = useState(0);
-  
+  const [name, setName] = React.useState('Cat in the Hat');
+
+  function handleChange(e) {
+    setName(e.target.value);
+    console.log(name);
+  }
+
   return (
-    
+
     <>
-      
+
       <Container maxWidth="md" sx={{ mb: 4 }}>
         <Typography
           variant="h2"
@@ -46,7 +52,9 @@ function App() {
         </Typography>
       </Container>
 
-      <StateTextFields />
+      <StateTextFields
+      onChange = {handleChange} 
+      name = {name}/>
 
       <Container maxWidth="lg">
         <Grid container spacing={0} >
@@ -56,7 +64,7 @@ function App() {
                 title={exercise.title}
                 imgURL={exercise.imgURL}
                 description={exercises.description}
-                
+
               />
             </Grid>
           ))}
@@ -71,11 +79,11 @@ function App() {
       Click Me
     </Button> */}
 
-    <BasicModal />
+      <BasicModal />
 
-    <ClickButton />
-    
-    <BasicPopover />
+      <ClickButton />
+
+      <BasicPopover />
     </>
   )
 }
