@@ -11,33 +11,17 @@ import Container from "@mui/material/Container";
 import DataCard from './DataCard';
 import exercises from "./exercises.json"
 import { useState } from 'react';
-import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import ClickButton from './ClickButton';
 import BasicPopover from './BasicPopover';
+import BasicModal from './BasicModal';
+import StateTextFields from './StateTextFields';
 
 
 // import characters from './protagonists.json'
 
 function App() {
   const [counter, setCounter] = useState(0);
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
-  const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-  };
-
-
   
   return (
     
@@ -62,6 +46,8 @@ function App() {
         </Typography>
       </Container>
 
+      <StateTextFields />
+
       <Container maxWidth="lg">
         <Grid container spacing={0} >
           {exercises.map(exercise => (
@@ -85,29 +71,10 @@ function App() {
       Click Me
     </Button> */}
 
+    <BasicModal />
+
     <ClickButton />
-     
-  
-        {/*Modal*/}
-    <div>
-      <Button onClick={handleOpen}>Open modal</Button>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Why did they remake Karate Kid?
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            I'm in a club that makes me watch movies and it ruined my memories.
-          </Typography>
-        </Box>
-      </Modal>
-    </div>
-        {/*Popover*/}
+    
     <BasicPopover />
     </>
   )
